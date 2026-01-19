@@ -65,7 +65,12 @@ body{
 
 .hero__img{
 
-  width: min(720px, 100%);
+  width: 100%;
+  max-width: 720px;   /* ajusta 600-900 según te guste */
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
    
 }
 
