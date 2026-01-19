@@ -66,11 +66,13 @@ body{
 .hero__img{
 
   width: 100%;
-  max-width: 720px;   /* ajusta 600-900 según te guste */
+  max-width: 600px;   /* ajusta 520-700 si lo quieres más pequeño */
+  max-height: 340px;
   height: auto;
   display: block;
   object-fit: cover;
   border-radius: 18px;
+   
    
 }
 
