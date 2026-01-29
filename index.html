@@ -1,240 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALVULAS</title>
-    <link rel="stylesheet" href="EstiloHoja-2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAMILIAS MEP</title>
+  <link rel="stylesheet" href="/Estilo de hoja-2/EstiloHoja-2.css">
 </head>
 <body>
 
-    <section class="hero">
-  <div class="hero__container">
-    
-    <div class="hero__left">
-      <h1 class="hero__title">Familias paramétricas<br>de válvulas para Revit</h1>
-      <h2 class="hero__subtitle">
-        Diseñadas para proyectos industriales, grandes<br>
-        diámetros y flujos reales de obra.
-      </h2>
+<div data-include="secciones/encabezado.html"></div>
 
-      <h3 class="hero__subtitle-2">
-        Entregas Rapidas - Estandares BIM - Industrial MEP - Cantidades Listas
-      </h3>
+<div data-include="secciones/categorias.html"></div>
 
-    </div>
+<div data-include="secciones/articulos-valvulas-pvc.html"></div>
 
-    <div class="hero__right">
-      <img class="hero__img" src="imagen general.jpg" alt="Modelo BIM válvulas">
-    </div>
+<div data-include="secciones/articulos-valvulas-inox.html"></div>
 
-  </div>
+<div data-include="secciones/articulos-soporteria.html"></div>
 
-</section>
+<div data-include="secciones/articulos-accesorios-tuberia.html"></div>
 
-<div class="encabezado-2">
-  <h1>TIPOS DE VÁLVULA INOXIDABLE</h1>
-  <h2 class="subtitulo-2">Ejemplos reales listos para proyectos en Revit</h2>
-</div>
+<div data-include="secciones/precios.html"></div>
 
+<div data-include="secciones/razones.html"></div>
 
 
-<!-- IMAGANES FILA UNO VALVULAS INOX -->
+  <script>
+    document.querySelectorAll('[data-include]').forEach(async (el) => {
+      const src = el.getAttribute('data-include');
+      const res = await fetch(src);
+      const html = await res.text();
+      el.outerHTML = html;
+    });
+  </script>
 
-
-
-<section class="section-valve">
-
-    
-
-    <div class="simple-container">
-
-    <div class="valve-box">  
-        <img src="Check Valve.jpg" alt="valvula check">
-        <p class="name-valve">VALVULA CHECK</p>
-
-        <a class="btn-boton" href="https://bimgenius2023.sharepoint.com/:u:/s/Learning/IQDyXGKLUWqsRoP4Jj3px7VUARQfId_S5qkzZY3RZB04VMI?e=llXWwS&download=1" target="_blank" rel="noopener">Descargar familia Revit</a>
-        
-    </div>
-    
-    <div class="valve-box">  
-        <img src="valvula automatica con actuador.jpg" alt="valvula check">
-        <p class="name-valve">VALVULA AUTOMATICA</p>
-
-        <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-        
-    </div> 
-
-    <div class="valve-box">  
-        <img src="valvula bidireccional.jpg" alt="valvula check">
-        <p class="name-valve">VALVULA BIDIRECCIONAL</p>
-
-        <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit </a>
-        
-    </div> 
-
-     <div class="valve-box">  
-        <img src="valvula tipo gaveta.jpg" alt="valvula check">
-        <p class="name-valve">VALVULA TIPO GAVETA</p>
-
-        <a class="btn-boton"href="../Imag-valvulas/válvula tipo gaveta.jpg" download="">Descargar familia Revit</a>
-        
-        
-    </div> 
- 
-    </div>
-    </section> 
-
-
-    <!-- IMAGANES FILA DOS VALVULAS INOX --> 
-
-
-
-    <section class="section-2">
-        <div class="card-2-container">
-
-            
-
-            <div class="valve-section-2">
-                <img src="valvula selenoide.jpg" alt="">
-                <p class="name-valve">VALVULA SELENOIDE</p>
-                <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">
-                    Descargar familia Revit
-                </a>
-            </div>
-
-            <div class="valve-section-2">
-                <img src="valvula de bola cementable.jpg" alt="">
-                <p class="name-valve">VALVULA DE BOLA CEMENTABLE</p>
-                <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">
-                    Descargar familia Revit
-                </a>
-            </div>
-
-            <div class="valve-section-2">
-                <img src="valvula automatica con actuador.jpg" alt="">
-                <p class="name-valve">VALVULA AUTOMATICA CON ACTUADOR</p>
-                <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">
-                    Descargar familia Revit
-                </a>
-            </div>
-
-            <div class="valve-section-2">
-                <img src="parametrizacion valvulas check.jpg" alt="">
-                <p class="name-valve">PARAMETRIZACION DE VALVULAS</p>
-                <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-            </div>
-
-
-
-
-        </div>
-
-    </section>
-
-
-
-     <!-- SECTION VALVULAS PVC --> 
-
-
-     <div class="encabezado-2">
-     <h1>TIPOS DE VÁLVULA PVC </h1>
-     <h2 class="subtitulo-2">Ejemplos reales listos para proyectos en Revit</h2>
-     </div>
-
-     
-
-     <section class="section-2a">
-
-     <div class="grid-container-2">
-
-     <div class="b">
-     <img src="valvula selenoide.jpg" alt="">
-     <p class="name-valve">PARAMETRIZACION DE VALVULAS</p>
-     <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-     </div>
-
-     <div class="b">
-     <img src="valvula selenoide.jpg" alt="">
-     <p class="name-valve">PARAMETRIZACION DE VALVULAS</p>
-     <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-     </div>
-
-     <div class="b">
-     <img src="valvula selenoide.jpg" alt="">
-     <p class="name-valve">PARAMETRIZACION DE VALVULAS</p>
-     <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-     </div>
-
-
-     <div class="b">
-     <img src="valvula selenoide.jpg" alt="">
-     <p class="name-valve">PARAMETRIZACION DE VALVULAS</p>
-     <a class="btn-boton"href="../Imag-valvulas/parametrizacion valvulas check.jpg" download="">Descargar familia Revit</a>
-     </div>
-
-
-        
-        
-
-     </div>
-     </section>
-
-
-     <!-- SECTION ISOMETRICOS  --> 
-
-
- 
-<div class="title-ejemplos">
-   <h1 class="encabezado-3">Ejemplos Reales de Familias</h1> 
-   <h2 class="subtitulo-3">Con previews, virtuales, simbolos 2D, y tablas de cantidades cuantificables</h2>
-</div>
-
-
- 
-     <!-- PADRE E HIJO -->    
-     <section class="examples">
-     <article class="example-card">
-     
-     <!-- ZONA DE 2 IMÁGENES -->  
-
-      <div class="example-card__imgbox">
-        <img src="KROGER_R23 IMAGEN 1.jpg" alt="Vista 3D válvula check">
-        <h1 class="example-card-title"> ISOMETRICOS</h1>
-        <a href="../img-practicas reales/KROGER_R23 IMAGEN 1.jpg" download>
-        Descargar familia Revit
-       </a>
-      </div>
-
-
-      <div class="example-card__imgbox">
-        <img src="KROGER_R23 IMAGEN 6.jpg" alt="Vista 3D válvula check">
-        <h1 class="example-card-title"> ISOMETRICOS</h1>
-        <a href="../img-practicas reales/KROGER_R23 IMAGEN 1.jpg" download>
-        Descargar familia Revit
-       </a>
-      </div>
-
-
-      <div class="example-card__imgbox">
-        <img src="KROGER_R23 IMAGEN 2.jpg" alt="Vista 3D válvula check">
-        <h1 class="example-card-title"> ISOMETRICOS</h1>
-        <a href="../img-practicas reales/KROGER_R23 IMAGEN 1.jpg" download>Descargar familia Revit</a>
-       
-       
- 
-
-      </div>
-
-
-     </article>
-     </section>
-
-
-      
-
-     
 </body>
 </html>
- </html>
+
 
