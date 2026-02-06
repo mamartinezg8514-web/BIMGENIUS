@@ -1,46 +1,99 @@
-<section class="encabezado-sitio">
+﻿<section class="encabezado-sitio">
 
      <!-- Barra superior -->
 
     <div class="barra-superior">
       <div class="barra-superior__contenedor">
+        <div class="barra-superior__marca">
+          <span class="marca__sigla">BIMPRAXIS</span>
+          <span class="marca__tag">Biblioteca MEP Paramétrica</span>
+        </div>
 
-           <div  class="barra-superior__marca">BIMGENIUS</div>
+        <nav class="barra-superior__menu">
+          <a href="#">Familias</a>
+          <a href="#">Categorías</a>
+          <a href="#">Compatibilidad</a>
+          <a href="#">Soporte</a>
+        </nav>
 
         <div class="barra-superior__acciones">     
-          <a class="barra-superior__texto">Familias MEP Parametricas</a>     
           <button class="barra-superior__boton">📍 Colombia</button>
-          
+          <button class="barra-superior__cta">Ver catálogo</button>
         </div>
       </div>
     </div>
 
 
+    <!-- Sección principal -->
     <div class="seccion-principal">
 
       <div class="seccion-principal__contenido">
 
+        <!-- Imagen principal -->
         <div class="seccion-principal__imagen">     
-        <img src="KROGER_R23 IMAGEN 1.jpg" alt="">
+        <img src="/img-practicas reales/KROGER_R23 IMAGEN 1.jpg" alt="">
         </div>
 
 
+        <!-- Texto principal -->
         <div class="seccion-principal__texto">
 
         <h1 class="seccion-principal__titulo">
-        Familias BIM MEP paramétricas.
-        <span class="titulo-hero">para proyectos industriales y de gran escala  </span>
+        Familias BIM MEP con criterio de ingeniería para obra industrial. <br>
+        <span class="titulo-hero">Parametría controlada, cuantificación confiable y coordinación sin errores en Revit</span>
         </h1>
+        <!-- Lista de beneficios -->
         <ul class="beneficios">
-          <li>Diseñadas para Revit</li>
-          <li>Listas para cuantificar</li>
-          <li>Flujos reales de obra</li>
+          <li>Parámetros útiles, no decorativos</li>
+          <li>Tablas y cantidades listas para obra</li>
+          <li>Coordinación BIM sin reprocesos</li>
         </ul>
 
-
+        <div class="datos-tecnicos">
+          <span>+1200 familias MEP</span>
+          <span>Industria y minería</span>
+          <span>Revit 2021–2025</span>
         </div>
 
+        <!-- Botón para abrir el modal de proyectos -->
+        <button class="boton-proyectos" type="button">Ver proyectos</button>
+
         </div>
+        </div>
+
+
+        <!-- Modal de proyectos -->
+        <div>
+
+          <div class="modal-proyectos" id="modal-proyectos" aria-hidden="true" role="dialog" aria-modal="true">
+          <!-- Fondo para cerrar el modal -->
+          <div class="modal-proyectos__fondo" data-close></div>
+          <!-- Panel del modal -->
+          <div class="modal-proyectos__panel" role="document">
+            <!-- Botón para cerrar -->
+            <button class="modal-proyectos__cerrar" type="button" data-close aria-label="cerrar">X</button>
+
+            <!-- Imagen del proyecto -->
+            <img id="visor-proyecto" class="modal-proyectos__imagen" alt="Proyecto">
+
+            <!-- Lista de imágenes del carrusel -->
+            <div class="modal-proyectos__lista" id="lista-proyectos">
+              <span data-img="../Img/CWT-OLF-ISO-402%20DIGESTOR%20ACIDOGÊNICO%202-14.jpg"></span>
+              <span data-img="../Img/CWT-OLF-ISO-405%20DIGESTOR%20ACIDOGÊNICO%205-14.jpg"></span>
+              <span data-img="../Img/CWT-OLF-ISO-406%20DIGESTOR%20ACIDOGÊNICO%206-14.jpg"></span>
+              <span data-img="../Img/CWT-OLF-ISO-408%20DIGESTOR%20ACIDOGÊNICO%208-14.jpg"></span>
+            </div>
+          </div>
+          <!-- Botón siguiente del carrusel -->
+          <button class="modal-proyectos__siguiente" type="button" aria-label="Siguiente">SIGUIENTE</button>
+          </div>
+
+
+
+
+
+        </div>    
     </div>
   </section>
 
+  

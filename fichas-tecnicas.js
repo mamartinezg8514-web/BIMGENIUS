@@ -1,4 +1,6 @@
+// Inicialización del sitio y modales
 (async () => {
+  // Carga de secciones HTML reutilizables
   const includes = Array.from(document.querySelectorAll('[data-include]'));
   await Promise.all(includes.map(async (el) => {
     const src = el.getAttribute('data-include');
@@ -7,6 +9,55 @@
     el.outerHTML = html;
   }));
 
+  // Referencias al botón y modal de proyectos
+  const btnProyectos = document.querySelector('.boton-proyectos');
+  const modalProyectos = document.getElementById('modal-proyectos');
+
+  if (btnProyectos && modalProyectos) {
+    // Elementos del carrusel de proyectos
+    const visorProyecto = modalProyectos.querySelector('#visor-proyecto');
+    const btnSiguienteProyecto = modalProyectos.querySelector('.modal-proyectos__siguiente');
+    const listaProyectos = Array.from(modalProyectos.querySelectorAll('.modal-proyectos__lista [data-img]'))
+      .map((item) => item.getAttribute('data-img'))
+      .filter(Boolean);
+    let indiceProyecto = 0;
+
+    // Muestra la imagen actual en el visor
+    const mostrarProyecto = () => {
+      if (!visorProyecto || listaProyectos.length === 0) return;
+      visorProyecto.src = listaProyectos[indiceProyecto];
+    };
+
+    // Abre el modal de proyectos
+    btnProyectos.addEventListener('click', () => {
+      modalProyectos.classList.add('is-open');
+      modalProyectos.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-proyectos-abierto');
+      indiceProyecto = 0;
+      mostrarProyecto();
+    });
+
+    // Cierra el modal al hacer clic en el fondo o botón cerrar
+    modalProyectos.addEventListener('click', (event) => {
+      if (event.target.closest('[data-close]')) {
+        modalProyectos.classList.remove('is-open');
+        modalProyectos.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-proyectos-abierto');
+      }
+    });
+
+    if (btnSiguienteProyecto) {
+      // Avanza a la siguiente imagen del carrusel
+      btnSiguienteProyecto.addEventListener('click', (event) => {
+        event.stopPropagation();
+        if (listaProyectos.length === 0) return;
+        indiceProyecto = (indiceProyecto + 1) % listaProyectos.length;
+        mostrarProyecto();
+      });
+    }
+  }
+
+  // Referencias del modal de fichas técnicas
   const modal = document.getElementById('modal-ficha');
   const modalImg = modal ? modal.querySelector('.modal-ficha__img') : null;
   const dimTabs = modal ? Array.from(modal.querySelectorAll('[data-dim-tab]')) : [];
@@ -29,6 +80,7 @@
 
   let currentFicha = null;
 
+  // Convierte un texto con separadores a una lista limpia
   const splitList = (text) => {
     if (!text) return [];
     return text
@@ -37,6 +89,7 @@
       .filter(Boolean);
   };
 
+  // Renderiza dimensiones en el panel activo
   const renderDims = (panel, text) => {
     if (!panel) return;
     const items = splitList(text);
@@ -47,6 +100,7 @@
     panel.innerHTML = `<ul>${items.map((item) => `<li>${item}</li>`).join('')}</ul>`;
   };
 
+  // Cambia pestaña de dimensiones
   const setActiveTab = (key) => {
     dimTabs.forEach((tab) => {
       tab.classList.toggle('is-active', tab.dataset.dimTab === key);
@@ -56,6 +110,7 @@
     });
   };
 
+  // Rellena los metadatos de la ficha
   const fillMeta = (data) => {
     if (!metaFields) return;
     const setText = (el, value) => {
@@ -75,6 +130,7 @@
     setText(metaFields.desc, data.desc);
   };
 
+  // Abre el modal de ficha técnica
   const openModal = (data) => {
     if (!modal || !modalImg) return;
     currentFicha = data;
@@ -95,6 +151,7 @@
     document.body.classList.add('modal-ficha-open');
   };
 
+  // Cierra el modal de ficha técnica
   const closeModal = () => {
     if (!modal || !modalImg) return;
     modal.classList.remove('is-open');
@@ -103,6 +160,7 @@
     document.body.classList.remove('modal-ficha-open');
   };
 
+  // Delegación de eventos para botones y pestañas
   document.addEventListener('click', (event) => {
     const fichaBtn = event.target.closest('.boton-ficha');
     if (fichaBtn) {
@@ -161,6 +219,7 @@
     }
   });
 
+  // Cierre con tecla Escape
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeModal();
   });

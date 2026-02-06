@@ -9,37 +9,39 @@
       <div class="ficha__header">
         <img class="ficha__header-img" alt="Encabezado ficha">
       </div>
-      <div class="ficha__dims-box">
-        <div class="ficha__tabs" role="tablist" aria-label="Dimensiones">
-          <button class="ficha__tab is-active" type="button" data-dim-tab="in">Dimensiones en pulgadas</button>
-          <button class="ficha__tab" type="button" data-dim-tab="mm">Dimensiones en milimetros</button>
+      <div class="ficha__body">
+        <div class="ficha__dims-box">
+          <div class="ficha__tabs" role="tablist" aria-label="Dimensiones">
+            <button class="ficha__tab is-active" type="button" data-dim-tab="in">Dimensiones en pulgadas</button>
+            <button class="ficha__tab" type="button" data-dim-tab="mm">Dimensiones en milimetros</button>
+          </div>
+          <div class="ficha__dims" data-dim-panel="in"></div>
+          <div class="ficha__dims" data-dim-panel="mm" hidden></div>
         </div>
-        <div class="ficha__dims" data-dim-panel="in"></div>
-        <div class="ficha__dims" data-dim-panel="mm" hidden></div>
-      </div>
 
-      <div class="ficha__meta">
-        <div class="ficha__meta-row"><span>Part Number:</span><strong data-ficha-part>-</strong></div>
-        <div class="ficha__meta-row"><span>Size:</span><strong data-ficha-size>-</strong></div>
-        <div class="ficha__meta-row"><span>Box Qty:</span><strong data-ficha-box>-</strong></div>
-        <div class="ficha__meta-row"><span>Weight lbs:</span><strong data-ficha-weight-lbs>-</strong></div>
-        <div class="ficha__meta-row"><span>Weight gm:</span><strong data-ficha-weight-gm>-</strong></div>
-        <div class="ficha__meta-row"><span>Weight kg:</span><strong data-ficha-weight-kg>-</strong></div>
-        <div class="ficha__meta-row"><span>Material:</span><strong data-ficha-material>-</strong></div>
-        <div class="ficha__meta-row"><span>MSRP:</span><strong data-ficha-msrp>-</strong></div>
-        <div class="ficha__meta-row"><span>Prod Code:</span><strong data-ficha-prod-code>-</strong></div>
-        <div class="ficha__meta-row"><span>Color:</span><strong data-ficha-color>-</strong></div>
-        <div class="ficha__meta-row"><span>Bsh/Fab/Mld:</span><strong data-ficha-bsh>-</strong></div>
-        <div class="ficha__meta-row ficha__meta-row--full"><span>Description:</span><strong data-ficha-desc>-</strong></div>
-      </div>
+        <div class="ficha__meta">
+          <div class="ficha__meta-row"><span>Part Number:</span><strong data-ficha-part>-</strong></div>
+          <div class="ficha__meta-row"><span>Size:</span><strong data-ficha-size>-</strong></div>
+          <div class="ficha__meta-row"><span>Box Qty:</span><strong data-ficha-box>-</strong></div>
+          <div class="ficha__meta-row"><span>Weight lbs:</span><strong data-ficha-weight-lbs>-</strong></div>
+          <div class="ficha__meta-row"><span>Weight gm:</span><strong data-ficha-weight-gm>-</strong></div>
+          <div class="ficha__meta-row"><span>Weight kg:</span><strong data-ficha-weight-kg>-</strong></div>
+          <div class="ficha__meta-row"><span>Material:</span><strong data-ficha-material>-</strong></div>
+          <div class="ficha__meta-row"><span>MSRP:</span><strong data-ficha-msrp>-</strong></div>
+          <div class="ficha__meta-row"><span>Prod Code:</span><strong data-ficha-prod-code>-</strong></div>
+          <div class="ficha__meta-row"><span>Color:</span><strong data-ficha-color>-</strong></div>
+          <div class="ficha__meta-row"><span>Bsh/Fab/Mld:</span><strong data-ficha-bsh>-</strong></div>
+          <div class="ficha__meta-row ficha__meta-row--full"><span>Description:</span><strong data-ficha-desc>-</strong></div>
+        </div>
 
-      <div class="ficha__actions">
-        <button class="ficha__action" type="button" data-ficha-action="email">Enviar por correo</button>
-        <button class="ficha__action" type="button" data-ficha-action="print">Imprimir</button>
-        <button class="ficha__action ficha__action--primary" type="button" data-ficha-action="add">Agregar a lista</button>
-        <label class="ficha__qty">Qty:
-          <input type="number" min="0" value="0">
-        </label>
+        <div class="ficha__actions">
+          <button class="ficha__action" type="button" data-ficha-action="email">Enviar por correo</button>
+          <button class="ficha__action" type="button" data-ficha-action="print">Imprimir</button>
+          <button class="ficha__action ficha__action--primary" type="button" data-ficha-action="add">Agregar a lista</button>
+          <label class="ficha__qty">Qty:
+            <input type="number" min="0" value="0">
+          </label>
+        </div>
       </div>
     </div>
   </div>
