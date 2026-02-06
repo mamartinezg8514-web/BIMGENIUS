@@ -1158,7 +1158,7 @@ body.modal-ficha-open{
     justify-content: flex-end;
   }
   .seccion-principal__contenido{
-    flex-direction: column;
+    grid-template-columns: 1fr;
     align-items: center;
     text-align: center;
   }
@@ -1197,6 +1197,11 @@ body.modal-ficha-open{
   }
   .barra-superior__marca{
     align-self: center;
+  }
+  .barra-superior__menu{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 14px;
   }
   .barra-superior__acciones{
     justify-content: center;
@@ -1274,6 +1279,19 @@ body.modal-ficha-open{
   .barra-superior__boton{
     font-size: 12px;
     padding: 4px 8px;
+  }
+  .barra-superior__menu a{
+    font-size: 12px;
+  }
+  .barra-superior__acciones{
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+  .barra-superior__cta{
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
   }
   .seccion-principal__imagen{
     padding: 8px;
@@ -1549,13 +1567,13 @@ body.modal-proyectos-abierto{
 }
 
 .boton-mobiliario{
-  background: var(--blanco-tecnico);
-  border: 1px solid var(--gris-linea);
+  background: linear-gradient(180deg, #FFF4DE 0%, #FFE7B8 100%);
+  border: 1px solid #F59E0B;
   border-radius: 3px;
   padding: 14px 12px;
   text-align: center;
-  box-shadow: none;
-  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.18), inset 0 0 0 1px rgba(245, 158, 11, 0.25);
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
 }
 
 .boton-mobiliario h3{
@@ -1565,17 +1583,20 @@ body.modal-proyectos-abierto{
 }
 
 .boton-mobiliario:hover{
-  background: #EDF2F7;
-  border-color: #C7D1DB;
+  background: linear-gradient(180deg, #FFEFD1 0%, #FFDE9C 100%);
+  border-color: #E48900;
 }
 
 .boton-mobiliario.is-activo{
-  border-color: var(--naranja-industrial);
-  background: #FFF6E5;
+  border-color: #D97706;
+  background: linear-gradient(180deg, #FFE7B8 0%, #FFD28A 100%);
+  box-shadow: 0 10px 22px rgba(245, 158, 11, 0.28), inset 0 0 0 1px rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
 }
 
 .boton-mobiliario.is-activo h3{
-  color: #8a5b00;
+  color: #8A4B00;
+  letter-spacing: .8px;
 }
 
 @media (max-width: 900px){
@@ -1586,7 +1607,17 @@ body.modal-proyectos-abierto{
 
 @media (max-width: 600px){
   .botones{
-    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(180px, 70%);
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 6px 12px 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .boton-mobiliario{
+    scroll-snap-align: start;
   }
 }
 /* ====== Rediseño técnico: Planes y Razones ====== */
@@ -1795,4 +1826,41 @@ body.modal-proyectos-abierto{
   border-radius: 4px;
   border: 1px solid var(--gris-linea);
   background: #ffffff;
+}
+
+/* ====== Ajustes responsivos finales (planes y parte inferior) ====== */
+@media (max-width: 1024px){
+  .precios{
+    padding: 40px 16px;
+  }
+  .razones{
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 900px){
+  .precios-grid{
+    grid-template-columns: 1fr;
+  }
+  .razones-caja{
+    grid-template-columns: 1fr;
+  }
+  .razones-imagen{
+    order: -1;
+  }
+}
+
+@media (max-width: 600px){
+  .precios{
+    padding: 32px 16px;
+  }
+  .razones{
+    padding: 32px 16px;
+  }
+  .precio-card{
+    padding: 16px;
+  }
+  .razones-caja{
+    padding: 18px;
+  }
 }
